@@ -2,6 +2,7 @@ package com.rs.RetailStore.controller;
 
 import com.rs.RetailStore.model.Greeting;
 import jakarta.websocket.server.PathParam;
+import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,6 +12,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 @RequestMapping("/v1")
+@Scope("prototype")
 public class CustomerGreetingController {
     private static final String greetingContentTemplate = "Hello, %s %s";
     private final AtomicLong counter = new AtomicLong();
